@@ -1,0 +1,4 @@
+<!ELEMENT project (scene*)>
+
+<!ELEMENT scene (object*)>
+<!ATTLIST scene name CDATA #REQUIRED>
