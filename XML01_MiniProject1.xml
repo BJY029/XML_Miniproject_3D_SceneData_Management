@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--!DOCTYPE project SYSTEM "XMLDTD.dtd"-->
+<!DOCTYPE project SYSTEM "XMLDTD.dtd">
 
 <project>
     <scene name="GameScene1">
@@ -187,7 +187,7 @@
                     <Mesh_ref>Position_1.fbx</Mesh_ref>
                 </component>
                 <component type="Collider">
-                    <Coll-Type>box</Coll-Type>
+                    <Coll_Type>box</Coll_Type>
                     <IsTrigger>true</IsTrigger>
                 </component>
                 <component type="Script">
@@ -260,7 +260,8 @@
                     <Loop>true</Loop>
                     <PlayOnAwake>true</PlayOnAwake>
                 </component>
-                <component type="Script">
+                <component
+                    type="Script">
                     <name>AudioManager.cs</name>
                     <parameter type="float" name="BgmVolume">0.7</parameter>
                 </component>

@@ -2,3 +2,74 @@
 
 <!ELEMENT scene (object*)>
 <!ATTLIST scene name CDATA #REQUIRED>
+
+<!ELEMENT object (transform, components)>
+<!ATTLIST object
+    id ID #REQUIRED
+    name CDATA #REQUIRED
+    parent IDREF #IMPLIED>
+
+<!ELEMENT transform (position, rotation, scale)>
+
+<!ELEMENT position EMPTY>
+<!ELEMENT rotation EMPTY>
+<!ELEMENT scale EMPTY>
+<!ATTLIST position
+    x CDATA #REQUIRED
+    y CDATA #REQUIRED
+    z CDATA #REQUIRED>
+<!ATTLIST rotation
+    x CDATA #REQUIRED
+    y CDATA #REQUIRED
+    z CDATA #REQUIRED>
+<!ATTLIST scale
+    x CDATA #REQUIRED
+    y CDATA #REQUIRED
+    z CDATA #REQUIRED>
+
+<!ELEMENT components (component*)>
+
+<!ELEMENT component (
+    (FieldOfView, NearClip, FarClip)|
+    (name, parameter*)|
+    (LightType, Intensity, Color)|
+    (Mass, IsKinematic)|
+    (Coll_Type, IsTrigger)|
+    (Mesh_ref)|
+    (Audio_ref, Loop, PlayOnAwake)|
+    (Render_Mode)|
+    (Scale_Mode)
+    )?>
+
+<!ATTLIST component type (camera | Light | AudioListener |
+ Script | Rigidbody | Collider | MeshRenderer | Canvas |
+  CanvasScaler | AudioSource) #REQUIRED>
+
+<!ELEMENT FieldOfView (#PCDATA)>
+<!ELEMENT NearClip (#PCDATA)>
+<!ELEMENT FarClip (#PCDATA)>
+
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT parameter (#PCDATA)>
+<!ATTLIST parameter
+    type (float | string | int | double | GameObject | Button) #REQUIRED
+    name CDATA #REQUIRED>
+
+<!ELEMENT LightType (#PCDATA)>
+<!ELEMENT Intensity (#PCDATA)>
+<!ELEMENT Color (#PCDATA)>
+
+<!ELEMENT Mass (#PCDATA)>
+<!ELEMENT IsKinematic (#PCDATA)>
+
+<!ELEMENT Coll_Type (#PCDATA)>
+<!ELEMENT IsTrigger (#PCDATA)>
+
+<!ELEMENT Mesh_ref (#PCDATA)>
+
+<!ELEMENT Audio_ref (#PCDATA)>
+<!ELEMENT Loop (#PCDATA)>
+<!ELEMENT PlayOnAwake (#PCDATA)>
+
+<!ELEMENT Render_Mode (#PCDATA)>
+<!ELEMENT Scale_Mode (#PCDATA)>
