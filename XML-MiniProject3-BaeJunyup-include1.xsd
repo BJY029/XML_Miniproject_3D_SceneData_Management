@@ -17,5 +17,4 @@
             <xsd:attribute name="parent" type="xsd:IDREF" use="optional" />
         </xsd:complexType>
     </xsd:element>
-
 </xsd:schema>
